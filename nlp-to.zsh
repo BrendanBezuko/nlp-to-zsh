@@ -1,5 +1,5 @@
 
-npl_to_zsh() { 
+nlp_to_zsh() { 
     # Capture the initial input
     local initial_input="$BUFFER"
     
