@@ -19,11 +19,12 @@ Simply type what you want to do in plain English and press `Ctrl+G`. Choose from
 3. **Python Requirements**: Install the Python dependencies listed in `requirements.txt`.
 4. **Script Installation**: Place `ask_gpt.py` in `/usr/local/bin/` and set it to executable with `sudo chmod +x /usr/local/bin/ask_gpt.py`. Move `nlp-to.zsh` to `/usr/local/bin/` and make it executable `sudo chmod +x /usr/local/bin/nlp-to.zsh`.
 5. **Shell Integration**: Append your `.zshrc` file with `source /usr/local/bin/nlp-to.zsh`, `export OPENAI_API_KEY='your_key_here'`, `export OPENAI_MODEL_NAME='your model here'` .
+6. **Open new shell**: Open a new instance of zsh and enjoy
 
 ### OpenAI Setup
 - **API Key**: Obtain an API key from OpenAI. [Click here for instructions](link_to_openai_api_key_setup).
 - **Model Options**: You can either use my fine-tuned model or fine-tune your own using the provided dataset.
-   - **Fine-Tuned Model**: Quick and easy setup. No editing the python script
+   - **Fine-Tuned Model**: Quick and easy setup. No editing the python script (I'm not sure if i can give this publicly yet give me time im learning)
    - **Custom Fine-Tuning Your Owwn model**: Offers more control and customization. A working model costs like 6 cents
 
 ## Future Plans and Features
