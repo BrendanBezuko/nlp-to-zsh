@@ -16,22 +16,21 @@ Simply type what you want to do in plain English and press `Ctrl+G`. Choose from
 ## Setup and Installation
 1. **Install Dependencies**: Ensure `zsh`, `python`, and `fzf` are installed on your system.
 
-2. **Python Requirements**: Install the Python dependencies listed in `pip install -r requirements.txt`
+2. **Python Requirements**: Install the Python dependencies listed in `pip install -r requirements.txt` (note if your on arch linux you can also `sudo pacman -S python-openai`)
 
-3. **Script Installation**: Place `cp ask_gpt.py /usr/local/bin/ && sudo chmod +x /usr/local/bin/ask_gpt.py
-cp nlp-to.zsh /usr/local/bin/ && sudo chmod +x /usr/local/bin/nlp-to.zsh`
+3. **Script Installation**: `cp ask_gpt.py /usr/local/bin/ && chmod +x /usr/local/bin/ask_gpt.py` and `cp nlp-to.zsh /usr/local/bin/ && chmod +x /usr/local/bin/nlp-to.zsh`may need sudo
 
-4. **OpenAI Setup**:
+5. **OpenAI Setup**:
 Obtain an API key from OpenAI, and fine tune a model with provided data (I used gpt3-turbo with great results). Take note of model name. 
 
-5. **Shell Integration**:
+6. **Shell Integration**: Append the file `~/.zshrc` with the following lines `source /usr/local/bin/nlp-to.zsh`, `export OPENAI_API_KEY='your_key_here'`, and `export OPENAI_MODEL_NAME='your_model_here'`. You can also use this script:
 `cat << EOF > .zshrc
-source /usr/local/bin/nlp-tool.zsh
+source /usr/local/bin/nlp-to.zsh
 export OPENAI_API_KEY='your_key_here'
 export OPENAI_MODEL_NAME='your_model_here'
 EOF`
 
-6. **Open new shell**: Open a new instance of zsh or source `. .zshrc`
+7. **Open new shell**: Open a new instance of zsh or source with this command: `. .zshrc` or `source ~/.zshrc`
 
 ## Future Plans and Features
 - Built in automated testing environment allowing user to quickly sandbox commands.
