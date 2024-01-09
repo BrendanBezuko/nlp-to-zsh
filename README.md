@@ -6,7 +6,7 @@
 `nlp-to-zsh` is a very simple and cutting-edge tool that seamlessly integrates Natural Language Processing (NLP) services, like OpenAI, with the Zsh command line. It allows users to type commands in plain English and receive command line suggestions, enhancing the user experience and efficiency.
 
 ## Disclaimer
-**Use at Your Own Risk**: This tool is provided without any guarantees or warranty. It sends data from the command line buffer to OpenAI or other NLP services. Note that the commands generated may not always work as expected and could potentially cause harm to your system resulting in data loss. Please proceed with caution and at your own risk. Thsi is intened as a tool to learn the linux command line faster than ever before.
+**Use at Your Own Risk**: This tool is provided without any guarantees or warranty. It sends data from the command line buffer to OpenAI or other NLP services. Note that the commands generated may not always work as expected and could potentially cause harm to your system resulting in data loss. Please proceed with caution and at your own risk. Intended as a tool to learn how to use the linux command line faster than ever before.
 
 ## What it Does and How to Use
 Simply type what you want to do in plain English and press `Ctrl+G`. Choose from the listed options, and the command will magically appear in your command line buffer. 
@@ -14,29 +14,35 @@ Simply type what you want to do in plain English and press `Ctrl+G`. Choose from
 **Supported Systems**: `nlp-to-zsh` is fine-tuned and tested primarily for GNU/Linux systems. MacOS users might experience certain limitations.
 
 ## Setup and Installation
-1. **Download Repo**: Clone this repository using Git.
-2. **Install Dependencies**: Ensure Zsh, Python3, and FZF are installed on your Linux system.
-3. **Python Requirements**: Install the Python dependencies listed in `requirements.txt`.
-4. **Script Installation**: Place `ask_gpt.py` in `/usr/local/bin/` and set it to executable with `sudo chmod +x /usr/local/bin/ask_gpt.py`. Move `nlp-to.zsh` to `/usr/local/bin/` and make it executable `sudo chmod +x /usr/local/bin/nlp-to.zsh`.
-5. **Shell Integration**: Append your `.zshrc` file with `source /usr/local/bin/nlp-to.zsh`, `export OPENAI_API_KEY='your_key_here'`, `export OPENAI_MODEL_NAME='your model here'` .
-6. **Open new shell**: Open a new instance of zsh and enjoy
+1. **Install Dependencies**: Ensure `zsh`, `python`, and `fzf` are installed on your system.
 
-### OpenAI Setup
-- **API Key**: Obtain an API key from OpenAI. [Click here for instructions](link_to_openai_api_key_setup).
-- **Model Options**: You can either use my fine-tuned model or fine-tune your own using the provided dataset.
-   - **Fine-Tuned Model**: Quick and easy setup. No editing the python script (I'm not sure if i can give this publicly yet give me time im learning)
-   - **Custom Fine-Tuning Your Owwn model**: Offers more control and customization. A working model costs like 6 cents
+2. **Python Requirements**: Install the Python dependencies listed in `pip install -r requirements.txt` (note if your on arch linux you can also `sudo pacman -S python-openai`)
+
+3. **Script Installation**: `cp ask_gpt.py /usr/local/bin/ && chmod +x /usr/local/bin/ask_gpt.py` and `cp nlp-to.zsh /usr/local/bin/ && chmod +x /usr/local/bin/nlp-to.zsh`may need sudo
+
+5. **OpenAI Setup**:
+Obtain an API key from OpenAI, and fine tune a model with provided data (I used gpt3-turbo with great results). Take note of model name. 
+
+6. **Shell Integration**: Append the file `~/.zshrc` with the following lines `source /usr/local/bin/nlp-to.zsh`, `export OPENAI_API_KEY='your_key_here'`, and `export OPENAI_MODEL_NAME='your_model_here'`. You can also use this script:
+```cat << EOF > .zshrc
+source /usr/local/bin/nlp-to.zsh
+export OPENAI_API_KEY='your_key_here'
+export OPENAI_MODEL_NAME='your_model_here'
+EOF```
+
+7. **Open new shell**: Open a new instance of zsh or source with this command: `. .zshrc` or `source ~/.zshrc`
 
 ## Future Plans and Features
-- Automated testing environment for safe command learning. I invision this as a workflow of pressing CRTL-G then selecting between models, then choosing (even modifying one-line script), finally, selecting wether to run on your system, in docker, chroot, take lvm snapshot etc.
-- Caching mechanism for previous results these request are very cheap but it could be useful. Possibly a small RAG (retrival agumented generation) or nlu that run locally on cpu
-- Enhanced fine-tuning dataset. I'm just learning how to fine tune models. I'm sure i made mistakes and the data set could be much bigger and better.
-- Support for local models using the Transformers library, likely running on Flask at a loopback address. Privacy is important to me and lamas/huggign face community makes running nlp on your local machine possible with consumer hardware.
+- Built in automated testing environment allowing user to quickly sandbox commands.
+- Support for multiple APIs for quickly accessing various models.
+- Support for locally hosted models (transformers, ollama, etc)
+- Enhanced fine-tuning datasets and models.
+- Caching mechanism for previous results
 
 ## Inspiration
-A long time ago (early 2000s), when i first started using linux learning the linux command-line was very tricky and intimidating, and I remeber often wishing at times that i could just use natural lnaguage and accomplish what i wanted to do quickly. Unfortuanly i had to grind out the basics and pratice to get proficent at it. Fast forward to today and, thankfully, you don't have. I hope this tool acts a beast for you to learn the command line quickly and effectivly.
+When i first started using linux, learning the linux command-line was often shifting through stackoverflow posts, man pages, and blog posts. I remember dreaming I could just use natural language to quickly reference commands or write a simple scripts. Modern technology makes this possible. I hope this project acts as a great tool for you to learn the command line quickly and effectively. Enjoy.
 
 ## Credits
-Developed by Brendan with signifiant help from ChatGPT (AI is great for generating code and avoiding spending all your time reading docs and recalling syntax, but it doesn't come up with it's own ideas, it can't setup enviroments and test them, redesign the architicture and iterate over ideas/code, ultimatly finding a solution that someone can actually use. GPT wrote parts of the scripts but I promoted it and told it waht libaries, commands to use and how it should work). All contributions are deeply appreciated.
+Developed by myself with modern programming tools. All contributions are deeply appreciated.
 
 Enjoy using `nlp-to-zsh`!
