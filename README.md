@@ -23,19 +23,14 @@ Simply type what you want to do in plain English and press `Ctrl+G`. Choose from
 5. **OpenAI Setup**:
 Obtain an API key from OpenAI, and fine tune a model with provided data (I used gpt3-turbo with great results). Take note of model name. 
 
-6. **Shell Integration**: Append the file `~/.zshrc` with the following lines `source /usr/local/bin/nlp-to.zsh`, `export OPENAI_API_KEY='your_key_here'`, and `export OPENAI_MODEL_NAME='your_model_here'`. You can also use this script:
-```cat << EOF > .zshrc
-source /usr/local/bin/nlp-to.zsh
-export OPENAI_API_KEY='your_key_here'
-export OPENAI_MODEL_NAME='your_model_here'
-EOF```
+6. **Shell Integration**: Append the file `~/.zshrc` with the following lines `source /usr/local/bin/nlp-to.zsh`, `export OPENAI_API_KEY='your_key_here'`, and `export OPENAI_MODEL_NAME='your_model_here'`.
 
 7. **Open new shell**: Open a new instance of zsh or source with this command: `. .zshrc` or `source ~/.zshrc`
 
 ## Future Plans and Features
 - Built in automated testing environment allowing user to quickly sandbox commands.
 - Support for multiple APIs for quickly accessing various models.
-- Support for locally hosted models (transformers, ollama, etc)
+- Support for locally hosted models.
 - Enhanced fine-tuning datasets and models.
 - Caching mechanism for previous results
 
