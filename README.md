@@ -3,10 +3,10 @@
 ![GIF of usage](screenshots/this.gif)
 
 ## Brief Description
-Learn how to use the Linux command line faster than ever before. Nlp-to-zsh is a cutting-edge tool that seamlessly integrates Natural Language Processing (NLP) services, like OpenAI's ChatGPT, with the Zsh command line. It allows users to type commands in plain English and receive command line suggestions, enhancing the user experience and efficiency.
+Generate commands faster than ever before. Nlp-to-zsh is a cutting-edge tool that seamlessly integrates Natural Language Processing (NLP) services, like OpenAI's ChatGPT, with the Zsh command line. It allows users to type commands in plain English and receive command line suggestions, enhancing the user experience and efficiency.
 
 ## Disclaimer:
-Use at Your Own Risk. This tool is provided without guarantees or warranty. It sends data from the command line buffer to OpenAI or other NLP services. Note that the commands generated may not always work as expected and could potentially cause harm to your system resulting in data loss. Please proceed with caution and at your own risk. I highly recommend using it in a virtual environment.
+Use at Your Own Risk. This tool is provided without guarantees or warranty. It sends data from the command line buffer to OpenAI or other NLP services. Note that the commands generated may not always work as expected and could potentially cause harm to your system resulting in data loss. Please proceed with caution and at your own risk. I highly recommend using it in a virtual environment first.
 
 ## What it Does and How to Use
 Type what you want to do in plain English and press `Ctrl+G`. Choose from the listed options, and the command will magically appear in your command line buffer.
