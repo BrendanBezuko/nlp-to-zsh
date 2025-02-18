@@ -2,9 +2,11 @@
 nlp_to_zsh() { 
     # Capture the initial input
     local initial_input="$BUFFER"
+
+    local venv_python="$NLP_TO_ZSH_PATH/bin/python"
     
     # Call the Python script and get suggestions 
-    local suggestions=$(ask_gpt.py "$initial_input")
+    local suggestions=$($venv_python $NLP_TO_ZSH_PATH/ask_gpt.py "$initial_input")
     
     # Use fzf to let the user select a suggestion 
     local selected=$(echo "$suggestions" | fzf --height 10 --layout=reverse)
